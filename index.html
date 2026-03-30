@@ -714,14 +714,14 @@
     <div class="logo-dot"></div>
     Poof
   </div>
-  <a href="#waitlist" class="nav-cta">Join waitlist</a>
+  <a href="#pricing" class="nav-cta">Get started</a>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
   <div class="badge">
     <div class="badge-dot"></div>
-    Chrome Extension · Coming soon
+    Chrome Extension · Available now
   </div>
 
   <h1>Select text.<br><span class="accent">Poof.</span><br>Jira ticket.</h1>
@@ -731,12 +731,8 @@
     <span>AI creates the perfect Jira ticket in 5 seconds.</span>
   </p>
 
-  <div class="waitlist-form" id="waitlist">
-    <input type="email" placeholder="your@email.com" id="emailInput" />
-    <button onclick="handleSignup()">Get early access</button>
-  </div>
-  <p class="success-msg" id="successMsg">✓ You're on the list! We'll reach out soon.</p>
-  <p class="social-proof">Free during beta · No credit card required</p>
+  <a href="#pricing" class="nav-cta" style="font-size:1rem; padding: 14px 32px; border-radius: 10px; text-decoration:none;">Get started free →</a>
+  <p class="social-proof" style="margin-top:16px;">Free plan available · No credit card required</p>
 </section>
 
 <!-- Demo -->
@@ -850,12 +846,8 @@
 <section class="cta-section">
   <div class="cta-box">
     <div class="cta-title">Stop copy-pasting<br>into Jira.</div>
-    <p class="cta-sub">Join the waitlist. Be first to try Poof when we launch.</p>
-    <div class="waitlist-form" style="margin-bottom: 0;">
-      <input type="email" placeholder="your@email.com" id="emailInput2" />
-      <button onclick="handleSignup2()">Get early access</button>
-    </div>
-    <p class="success-msg" id="successMsg2" style="margin-top: 12px;">✓ You're on the list! We'll reach out soon.</p>
+    <p class="cta-sub">Install Poof and create your first ticket in 30 seconds.</p>
+    <a href="#" class="nav-cta" style="display:inline-block; font-size:0.95rem; padding: 14px 32px; border-radius: 10px; text-decoration:none; margin-top:8px;">Add to Chrome — it's free</a>
   </div>
 </section>
 
@@ -890,32 +882,7 @@
     }
   }
 
-  // ZAMENI SA TVOJIM TALLY URL-om
-  const TALLY_URL = "https://tally.so/r/WOPxXR";
 
-  function handleSignup() {
-    const email = document.getElementById('emailInput').value;
-    if (!email || !email.includes('@')) {
-      document.getElementById('emailInput').style.borderColor = '#fc5cf0';
-      setTimeout(() => document.getElementById('emailInput').style.borderColor = '', 1500);
-      return;
-    }
-    window.open(TALLY_URL + '?email=' + encodeURIComponent(email), '_blank');
-    document.querySelector('.waitlist-form').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  }
-
-  function handleSignup2() {
-    const email = document.getElementById('emailInput2').value;
-    if (!email || !email.includes('@')) {
-      document.getElementById('emailInput2').style.borderColor = '#fc5cf0';
-      setTimeout(() => document.getElementById('emailInput2').style.borderColor = '', 1500);
-      return;
-    }
-    window.open(TALLY_URL + '?email=' + encodeURIComponent(email), '_blank');
-    document.querySelectorAll('.waitlist-form')[1].style.display = 'none';
-    document.getElementById('successMsg2').style.display = 'block';
-  }
 
   // Toggle billing
   document.getElementById('billingToggle').addEventListener('click', toggleBilling);
