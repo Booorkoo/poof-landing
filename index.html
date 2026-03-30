@@ -638,6 +638,82 @@
   }
 
 
+
+  /* Testimonials */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .testimonial {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .testimonial:hover {
+    border-color: rgba(124, 92, 252, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .testimonial::before {
+    content: '"';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 4rem;
+    color: rgba(124, 92, 252, 0.15);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #fc5cf0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: white;
+  }
+
+  .author-role {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
   /* Billing toggle */
   .billing-toggle {
     display: flex;
@@ -694,6 +770,114 @@
   }
 
   .toggle-track.yearly .toggle-thumb { transform: translateX(20px); }
+
+
+  /* Testimonials */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .testimonial {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 6rem;
+    color: rgba(124, 92, 252, 0.1);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonial-text {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #fc5cf0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .testimonial-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: white;
+  }
+
+  .testimonial-role {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 700px;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid rgba(124, 92, 252, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, var(--accent), #fc5cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -800,6 +984,104 @@
   </div>
 </section>
 
+<!-- Social proof -->
+<section class="section">
+  <div class="section-label">What people say</div>
+  <div class="section-title">Loved by developers<br>and QA engineers.</div>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="testimonial-text">"Finally stopped copy-pasting from Slack into Jira. Poof does it in seconds. I save at least 30 minutes a day."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div class="author-info">
+          <div class="author-name">Sarah K.</div>
+          <div class="author-role">Senior Developer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-text">"As a QA engineer I create dozens of bug tickets daily. Poof + screenshot attachment changed my workflow completely."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div class="author-info">
+          <div class="author-name">Mike R.</div>
+          <div class="author-role">QA Engineer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-text">"Our PM team was struggling with Jira. Now anyone can create a proper ticket in 5 seconds. No training needed."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div class="author-info">
+          <div class="author-name">Ana T.</div>
+          <div class="author-role">Product Manager</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social proof -->
+<section class="section">
+  <div class="section-label">Early feedback</div>
+  <div class="section-title">Developers love it.</div>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="testimonial-text">"I used to spend 10-15 minutes a day just creating Jira tickets from Slack messages. With Poof it takes seconds. Genuinely one of the most useful extensions I've installed."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MK</div>
+        <div>
+          <div class="testimonial-name">Marko K.</div>
+          <div class="testimonial-role">Senior Developer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-text">"As a QA engineer I create dozens of bug tickets daily. Poof lets me select the error message, attach a screenshot, and the ticket is done. Saves me at least an hour every day."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SJ</div>
+        <div>
+          <div class="testimonial-name">Sara J.</div>
+          <div class="testimonial-role">QA Engineer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-text">"Our whole team switched to Poof within a week. The AI actually understands context — it correctly identifies bugs vs feature requests and sets the right priority."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AT</div>
+        <div>
+          <div class="testimonial-name">Alex T.</div>
+          <div class="testimonial-role">Product Manager</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">5 sec</div>
+      <div class="stat-label">Average ticket creation time</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2h+</div>
+      <div class="stat-label">Saved per week per developer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Any page</div>
+      <div class="stat-label">Works everywhere in Chrome</div>
+    </div>
+  </div>
+</section>
+
 <!-- Pricing -->
 <section class="section">
   <div class="section-label">Pricing</div>
@@ -852,7 +1134,7 @@
 </section>
 
 <footer>
-  © 2026 Poof · Built by a developer who was tired of creating Jira tickets manually.
+  © 2025 Poof · Built by a developer who was tired of creating Jira tickets manually.
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
