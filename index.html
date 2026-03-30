@@ -890,6 +890,9 @@
     }
   }
 
+  // ZAMENI SA TVOJIM TALLY URL-om
+  const TALLY_URL = "https://tally.so/r/WOPxXR";
+
   function handleSignup() {
     const email = document.getElementById('emailInput').value;
     if (!email || !email.includes('@')) {
@@ -897,6 +900,7 @@
       setTimeout(() => document.getElementById('emailInput').style.borderColor = '', 1500);
       return;
     }
+    window.open(TALLY_URL + '?email=' + encodeURIComponent(email), '_blank');
     document.querySelector('.waitlist-form').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   }
@@ -908,6 +912,7 @@
       setTimeout(() => document.getElementById('emailInput2').style.borderColor = '', 1500);
       return;
     }
+    window.open(TALLY_URL + '?email=' + encodeURIComponent(email), '_blank');
     document.querySelectorAll('.waitlist-form')[1].style.display = 'none';
     document.getElementById('successMsg2').style.display = 'block';
   }
